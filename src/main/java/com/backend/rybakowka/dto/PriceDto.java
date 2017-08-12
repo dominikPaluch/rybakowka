@@ -14,9 +14,6 @@ import java.util.Currency;
 @AllArgsConstructor
 public class PriceDto {
 
-    @Id
-    private Long id;
-
     private double value;
 
     private boolean isSeazon;

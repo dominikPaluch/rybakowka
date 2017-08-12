@@ -13,8 +13,7 @@ import javax.persistence.Id;
 @AllArgsConstructor
 public class EquipmentDto {
 
-    @Id
-    private Long id;
+    private String serialNumber;
 
     //    @NotNull
     private boolean inStock;

@@ -48,7 +48,7 @@ public class AccountController {
     @PutMapping(value = "/update/{id}")
     public @ResponseBody
     AccountDto update(@PathVariable("id") Long id, @RequestBody AccountDto account) {
-        account.setId(id);
+//        account.setId(id);
         accountService.update(account);
         return account;
     }

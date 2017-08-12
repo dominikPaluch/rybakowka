@@ -1,10 +1,7 @@
 package com.backend.rybakowka.service;
 
 import com.backend.rybakowka.dto.AccountDto;
-import com.backend.rybakowka.model.Account;
-import com.backend.rybakowka.repository.AccountRepository;
 import org.springframework.http.ResponseEntity;
-import org.springframework.stereotype.Service;
 
 import java.util.List;
 

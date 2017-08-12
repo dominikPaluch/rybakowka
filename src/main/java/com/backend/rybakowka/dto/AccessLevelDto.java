@@ -14,9 +14,6 @@ import javax.validation.constraints.NotNull;
 @AllArgsConstructor
 public class AccessLevelDto {
 
-    @Id
-    private Long id;
-
 //    @NotNull
     private String name;
 }

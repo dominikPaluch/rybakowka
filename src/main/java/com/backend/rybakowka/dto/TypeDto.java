@@ -14,8 +14,5 @@ import javax.persistence.Id;
 @AllArgsConstructor
 public class TypeDto {
 
-    @Id
-    private Long id;
-
     private String  name;
 }
