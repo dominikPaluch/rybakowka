@@ -11,9 +11,9 @@ public interface EquipmentService {
 
     EquipmentDto findEquimpentById(Long id);
 
-    EquipmentDto save(EquipmentDto equipmentDto);
+    EquipmentDto add(EquipmentDto equipmentDto);
 
     EquipmentDto update(EquipmentDto equipmentDto);
 
-    ResponseEntity delete(Long id);
+    EquipmentDto delete(EquipmentDto equipmentDto);
 }

@@ -1,20 +1,26 @@
 package com.backend.rybakowka.dto;
 
+import com.backend.rybakowka.model.AccessLevelEnum;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
+import javax.persistence.Column;
 import javax.persistence.Id;
+import javax.persistence.UniqueConstraint;
 import javax.validation.constraints.NotNull;
 
 @Data
 @Builder
 @NoArgsConstructor
 @AllArgsConstructor
-public class AccountDto {
+public class UserDto {
+
+    private Long id;
 
     @NotNull
+    @Column(unique = true)
     private String login;
 
     @NotNull
@@ -27,20 +33,18 @@ public class AccountDto {
     private String lastname;
 
     @NotNull
+    @Column(unique = true)
     private String email;
-    //
+
     @NotNull
     private int phone;
 
-    //    @NotNull
-    private boolean confirmed;
+    @NotNull
+    private boolean isConfirmed;
 
-    //    @NotNull
-    private boolean active;
+    @NotNull
+    private boolean isDeleted;
 
-    //    @NotNull
-    private boolean accessLevel;
-
-    //    @NotNull
-    private Long accessLevelID;
+    @NotNull
+    private AccessLevelEnum accessLevelEnum;
 }

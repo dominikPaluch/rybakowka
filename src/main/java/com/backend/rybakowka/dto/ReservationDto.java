@@ -1,5 +1,6 @@
 package com.backend.rybakowka.dto;
 
+import com.backend.rybakowka.model.StatusReservationEnum;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
@@ -15,11 +16,14 @@ import java.util.Date;
 @AllArgsConstructor
 public class ReservationDto {
 
-//    @NotNull
+    @NotNull
     private Date start;
 
-//    @NotNull
+    @NotNull
     private Date stop;
+
+    @NotNull
+    private double totalPrice;
 
 //    @NotNull
     private String writtenOpinion;
@@ -27,13 +31,8 @@ public class ReservationDto {
 //    @NotNull
     private int numericalOpinion;
 
-//    @NotNull
-    private boolean deleted;
-    //
-//    @NotNull
-    private boolean archived;
+    @NotNull
+    private StatusReservationEnum statusReservationEnum;
 
-    private boolean released;
-
-    private Long accountId;
+    private Long userId;
 }

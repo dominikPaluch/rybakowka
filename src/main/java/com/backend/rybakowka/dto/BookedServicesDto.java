@@ -5,18 +5,18 @@ import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
-import javax.persistence.Id;
-import java.util.Currency;
+import javax.validation.constraints.NotNull;
 
 @Data
 @Builder
 @NoArgsConstructor
 @AllArgsConstructor
-public class PriceDto {
+public class BookedServicesDto {
 
-    private double value;
+    @NotNull
+    private Long reservationId;
 
-    private boolean isSeazon;
+    @NotNull
+    private Long equipmentId;
 
-//    private Long typeId;
 }

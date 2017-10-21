@@ -11,6 +11,8 @@ import java.util.List;
 
 @RestController
 @RequestMapping("/equipments")
+//@CrossOrigin(origins = "http://localhost:4200")
+@CrossOrigin(origins = "*")
 public class EquipmentController {
 
     private EquipmentService equipmentService;
@@ -33,7 +35,7 @@ public class EquipmentController {
     @PostMapping()
     public @ResponseBody
     EquipmentDto save(@RequestBody @Valid EquipmentDto equipmentDto) {
-        equipmentService.save(equipmentDto);
+        equipmentService.add(equipmentDto);
 
         return equipmentDto;
     }
@@ -47,7 +49,7 @@ public class EquipmentController {
     }
 
     @DeleteMapping(value = "/{id}")
-    public ResponseEntity delete(@PathVariable("id") Long id) {
-        return equipmentService.delete(id);
+    public EquipmentDto delete(@PathVariable("id") Long id, @RequestBody EquipmentDto equipmentDto) {
+        return equipmentService.delete(equipmentDto);
     }
 }

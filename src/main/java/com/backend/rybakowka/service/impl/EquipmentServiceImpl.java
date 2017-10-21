@@ -39,20 +39,27 @@ public class EquipmentServiceImpl implements EquipmentService {
     }
 
     @Override
-    public EquipmentDto save(EquipmentDto equipmentDto) {
+    public EquipmentDto add(EquipmentDto equipmentDto) {
         Equipment equipment = new Equipment(equipmentDto);
         return equipmentRepository.saveAndFlush(equipment).toDto();
     }
 
     @Override
     public EquipmentDto update(EquipmentDto equipmentDto) {
-        Equipment equipment = new Equipment(equipmentDto);
-        return equipmentRepository.saveAndFlush(equipment).toDto(); //// ??????????? zapisuje jako nowe teraz
+        Equipment equipment = new Equipment(findEquimpentById(equipmentDto.getId()));
+
+        equipment.setStatusEquipmentEnum(equipmentDto.getStatusEquipmentEnum());
+        equipment.setSerialNumber(equipmentDto.getSerialNumber());
+        equipment.setTypeId(equipmentDto.getTypeId());
+
+        return equipmentRepository.save(equipment).toDto();
     }
 
     @Override
-    public ResponseEntity delete(Long id) {
-        equipmentRepository.delete(id);
-        return ResponseEntity.ok().build();
+    public EquipmentDto delete(EquipmentDto equipmentDto) {
+        Equipment equipment = new Equipment(findEquimpentById(equipmentDto.getId()));
+
+        equipment.setDelated(true);
+        return equipmentRepository.save(equipment).toDto();
     }
 }
