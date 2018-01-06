@@ -1,11 +1,14 @@
 package com.backend.rybakowka.dto;
 
+import com.backend.rybakowka.model.StatusEquipmentEnum;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
+import javax.persistence.Column;
 import javax.persistence.Id;
+import javax.validation.constraints.NotNull;
 
 @Data
 @Builder
@@ -13,18 +16,18 @@ import javax.persistence.Id;
 @AllArgsConstructor
 public class EquipmentDto {
 
-    @Id
     private Long id;
 
-    //    @NotNull
-    private boolean inStock;
+    @NotNull
+    @Column(unique = true)
+    private String serialNumber;
 
-    //    @NotNull
-    private boolean serviced;
+    @NotNull
+    private StatusEquipmentEnum statusEquipmentEnum;
 
-    //    @NotNull
-    private boolean deleted;
+    @NotNull
+    private boolean isDelated;
 
-    //    @NotNull
+    @NotNull
     private Long typeId;
 }

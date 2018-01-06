@@ -1,14 +1,12 @@
 package com.backend.rybakowka.model;
-
-
 import com.backend.rybakowka.dto.EquipmentDto;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
-import javax.persistence.Entity;
-import javax.persistence.Id;
+import javax.persistence.*;
+import javax.validation.constraints.NotNull;
 
 @Data
 @Entity
@@ -18,31 +16,36 @@ import javax.persistence.Id;
 public class Equipment {
 
     public Equipment(EquipmentDto equipmentDto) {
-        this.inStock = equipmentDto.isInStock();
-        this.serviced = equipmentDto.isServiced();
-        this.deleted = equipmentDto.isDeleted();
+        this.id = equipmentDto.getId();
+        this.serialNumber = equipmentDto.getSerialNumber();
+        this.statusEquipmentEnum = equipmentDto.getStatusEquipmentEnum();
+        this.isDelated = equipmentDto.isDelated();
+        this.typeId = equipmentDto.getTypeId();
     }
 
     @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    //    @NotNull
-    private boolean inStock;
+    @Column(unique = true)
+    private String serialNumber;
 
-    //    @NotNull
-    private boolean serviced;
+    @NotNull
+    private StatusEquipmentEnum statusEquipmentEnum;
 
-    //    @NotNull
-    private boolean deleted;
+    @NotNull
+    private boolean isDelated;
 
-//    //    @NotNull
-//    private Long typeId;
+    @NotNull
+    private Long typeId;
 
     public EquipmentDto toDto() {
-        return  EquipmentDto.builder()
-                .inStock(this.inStock)
-                .serviced(this.serviced)
-                .deleted(this.deleted)
+        return EquipmentDto.builder()
+                .id((this.id))
+                .serialNumber(this.serialNumber)
+                .statusEquipmentEnum(this.statusEquipmentEnum)
+                .isDelated(this.isDelated)
+                .typeId(this.typeId)
                 .build();
     }
 
