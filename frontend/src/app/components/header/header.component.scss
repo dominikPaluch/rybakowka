@@ -1,0 +1,61 @@
+@mixin transitionBg() {
+  transition: background-color 0.5s ease;
+}
+.active-link {
+  color: #f3ff94;
+}
+.gray {
+  background-color: ghostwhite;
+}
+
+.no-padding {
+  padding: 0;
+}
+
+.header {
+  background-color: #333;
+  color: #fff;
+  height: 70px;
+  position: fixed;
+  display: flex;
+  z-index: 100;
+  width: 100%;
+  opacity: 0.9;
+
+  .left-header {
+    font-size: 42px;
+    text-align: center;
+
+    a {
+      text-decoration: none;
+      list-style: none;
+      margin: 0;
+      padding: 0;
+      font-weight: 700;
+      letter-spacing: 2px;
+      font-size: 52px;
+      text-transform: uppercase;
+      line-height: 70px;
+      color: #fff;
+    }
+
+  }
+
+  .right-header {
+    line-height: 70px;
+
+    a {
+      display: block;
+      text-align: center;
+      font-size: 20px;
+      text-decoration: none;
+      @include transitionBg;
+
+      &:hover {
+        background-color: lighten(#333, 15%);
+        color: #fff;
+        @include transitionBg;
+      }
+    }
+  }
+}

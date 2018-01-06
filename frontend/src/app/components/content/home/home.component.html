@@ -1,0 +1,257 @@
+<div id="header" #header pageScroll [pageScrollOffset]="0" [pageScrollDuration]="timeOfScrollUp"
+     [pageScrollEasing]="myEasing" [pageScrollInterruptible]="false"
+     (pageScrollFinish)="doSmthWhenGoToDescination($event)" href="#header">
+  <app-header></app-header>
+</div>
+<div #upScroll class="up-box animation" [@elementState]="scrollimateOptions.myScrollimation1.currentState"
+     [scrollimate]="scrollimateOptions.myScrollimation1"
+     pageScroll [pageScrollOffset]="0" [pageScrollDuration]="timeOfScrollUp"
+     [pageScrollEasing]="myEasing" [pageScrollInterruptible]="false"
+     (pageScrollFinish)="doSmthWhenGoToDescination($event)" href="#up-scroll">
+  <i class="fa fa-arrow-up"></i>
+</div>
+<div #socialMedia class="social-media">
+  <div class="fb" [@elementState]="scrollimateOptions.myScrollimation1.currentState"
+       [scrollimate]="scrollimateOptions.myScrollimation1">
+    <a href="https://www.facebook.com/Rybak%C3%B3wka-215823988923712/?ref=br_rs" target="_blank">
+      <i class="fa fa-facebook"></i>
+    </a>
+  </div>
+  <div class="instagram" [@elementState]="scrollimateOptions.myScrollimation1.currentState"
+       [scrollimate]="scrollimateOptions.myScrollimation1">
+    <a href="https://www.instagram.com/pali_r10/" target="_blank">
+      <i class="fa fa-instagram"></i>
+    </a>
+  </div>
+  <div class="twitter" [@elementState]="scrollimateOptions.myScrollimation1.currentState"
+       [scrollimate]="scrollimateOptions.myScrollimation1">
+    <a href="https://www.instagram.com/pali_r10/" target="_blank">
+      <i class="fa fa-twitter"></i>
+    </a>
+  </div>
+</div>
+<div id="up-scroll" class="row starter-pack padding-top">
+  <div class="col-md-4 left-starter">
+    <div class="content-left-starter">
+      <div class="row">
+        <div class="col-md-6 options">
+          <div>
+            <p-checkbox name="group1" value="Rowerki" label="Rowerki" [(ngModel)]="selectedObjects"
+                        inputId="ny"></p-checkbox>
+          </div>
+          <div>
+            <p-checkbox name="group1" value="Skutery wodne" label="Skutery wodne" [(ngModel)]="selectedObjects"
+                        inputId="sf"></p-checkbox>
+          </div>
+          <div>
+            <p-checkbox name="group1" value="Kajaki" label="Kajaki" [(ngModel)]="selectedObjects"
+                        inputId="la"></p-checkbox>
+          </div>
+          <div>
+            <p-checkbox name="group1" value="Motorówki" label="Motorówki" [(ngModel)]="selectedObjects"
+                        inputId="la"></p-checkbox>
+          </div>
+          <!--Selected Cities: <span *ngFor="let obj of selectedObjects" style="margin-right:10px">{{obj}}</span>-->
+        </div>
+        <div class="col-md-6">
+          <h5 class="h5-style">Wybierz termin</h5>
+          <app-calendar></app-calendar>
+        </div>
+      </div>
+      <div class="row hours-row">
+        <div class="col-md-6">
+          <div class="row">
+            <div class="col-md-12">
+              <span>Od:</span>
+            </div>
+            <div class="col-md-12">
+              <!--tooltipEvent="focus"-->
+              <select pTooltip="Wybierz początek" tooltipPosition="top" showDelay="500"
+                      hideDelay="500"
+                      [(ngModel)]="selectedStartHour" (ngModelChange)="onChangeStart($event)">
+                <option *ngFor="let h of startHours" [ngValue]="h"> {{h.value}}</option>
+              </select>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-6">
+          <div class="row">
+            <div class="col-md-12">
+              <span>Do:</span>
+            </div>
+            <div class="col-md-12">
+              <select pTooltip="Wybierz koniec" tooltipPosition="top" showDelay="500"
+                      hideDelay="500"
+                      [(ngModel)]="selectedStopHour" (ngModelChange)="onChangeStop($event)">
+                <option *ngFor="let h of stopHours" [ngValue]="h"> {{h.value}}</option>
+              </select>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-md-12 ">
+          <button type="button" class="btn btn-success btn-search">Szukaj</button>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div #carousel>
+    <app-carousel></app-carousel>
+  </div>
+</div>
+<div class="row baner">
+  <div class="jumbotron">
+    <div class="row">
+      <div class="col-md-4">
+        <div class="counter">
+          <span>
+          <ng2-odometer [number]="numberToCounting1"
+                        [config]="{ auto: false,  animation: 'count'}"
+                        [observable]="observable1">
+          </ng2-odometer>
+            <p>Obiektów</p>
+          </span>
+        </div>
+      </div>
+      <div class="col-md-4">
+        <div class="counter">
+          <span>
+          <ng2-odometer [number]="numberToCounting2"
+                        [config]="{ auto: false}"
+                        [observable]="observable2">
+          </ng2-odometer>
+            <p>Hektarów</p>
+          </span>
+        </div>
+      </div>
+      <div class="col-md-3">
+        <div class="counter">
+          <span>
+          <ng2-odometer [number]="numberToCounting3"
+                        [config]="{ auto: false,  animation: 'count'}"
+                        [observable]="observable3">
+          </ng2-odometer>
+            <p>Gości dziennie</p>
+          </span>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="row container-main">
+  <div class="col-md-4 container-left">
+    <div class="content-left">
+      <div class="row btn-opt">
+        <div class="col-md-offset-1 col-md-10 btn-opt">
+          <button pageScroll [pageScrollOffset]="200" [pageScrollDuration]="timeOfScroll"
+                  [pageScrollEasing]="myEasing" [pageScrollInterruptible]="false"
+                  (pageScrollFinish)="doSmthWhenGoToDescination($event)" href="#miniZoo"
+                  type="button" class="btn btn-primary">Mini ZOO
+          </button>
+        </div>
+        <div class="col-md-offset-1 col-md-10 btn-opt">
+          <button pageScroll [pageScrollOffset]="300" [pageScrollDuration]="timeOfScroll"
+                  [pageScrollEasing]="myEasing" [pageScrollInterruptible]="false"
+                  (pageScrollFinish)="doSmthWhenGoToDescination($event)" href="#learnMore"
+                  type="button" class="btn btn-primary btn-move">Przejdź do galerii
+          </button>
+        </div>
+        <div class="col-md-offset-1 col-md-10 btn-opt">
+          <button pageScroll [pageScrollOffset]="200" [pageScrollDuration]="timeOfScroll"
+                  [pageScrollEasing]="myEasing" [pageScrollInterruptible]="false"
+                  (pageScrollFinish)="doSmthWhenGoToDescination($event)" href="#whereWeAre"
+                  type="button" class="btn btn-primary">Gdzie jesteśmy?
+          </button>
+        </div>
+        <div class="col-md-offset-1 col-md-10 btn-opt">
+          <button pageScroll [pageScrollOffset]="200" [pageScrollDuration]="timeOfScroll"
+                  [pageScrollEasing]="myEasing" [pageScrollInterruptible]="false"
+                  (pageScrollFinish)="doSmthWhenGoToDescination($event)" href="#whereWeAre"
+                  type="button" class="btn btn-primary">Napisz do nas
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="col-md-8 content-right">
+    <app-data-table></app-data-table>
+  </div>
+</div>
+
+<div>Tu jakieś gwiazdki od opinii</div>
+<div class="title-of-section">
+  <span data-toggle="collapse" href="#collapseExample" aria-expanded="false"
+        aria-controls="collapseExample">
+    Nasze zwierzaki
+  <i class="fa fa-info-circle"></i>
+  </span>
+</div>
+<div class="collapse" id="collapseExample">
+  <div class="card card-body">
+    W Rybakówce znajdą rozrywkę nie tylko wędkarze i miłośnicy wodnego szaleństwa.
+    To wymarzone miejsce na odpoczynek dla całej rodziny. Mieszkańcy naszego mini ZOO
+    z pewnością zachwycą każdego odwiedzającego! Podziwiać tu można sarny, jelenie,
+    dziki czy łosie.
+    <p>Największą atrakcją jest zdecydowanie para żubrów, Maniek i Ela, pochodzący
+      z Puszczy Białowieskiej. Jako że jest to gatunek zagrożony wyginięciem, opiekunowie
+      Mańka i Eli dwoją się i troją, aby zapewnić im optymalne warunki do życia.
+    </p>
+    Kto wie, może już niedługo będziemy mogli cieszyć się nowym pokoleniem żubrów.
+    W mini ZOO znajduje się także otwarty wybieg, po którym spacerują kozy, świnki wietnamki,
+    czy kilkanaście gatunków ptactwa domowego. Miejsce to sprawia zazwyczaj najwięcej frajdy
+    dzieciom, które mogą tu bawić się wśród zwierząt, głaskać je, a nawet nakarmić.
+  </div>
+</div>
+<app-mini-zoo id="miniZoo"></app-mini-zoo>
+<div id="learnMore" class="title-of-section">Galeria zdjęć</div>
+<div class="row">
+  <div class="col-md-12">
+    <gallery [metadataUri]="'assets/gallery.json'"
+             [flexBorderSize]="3"
+             [flexImageSize]="7"
+             [galleryName]="'miniZoo'"
+             (viewerChange)="notDisplayWhenGalleryIsDisplay($event)">
+    </gallery>
+  </div>
+</div>
+<div #whereWeAre id="whereWeAre" class="title-of-section">
+  <p>
+    Tu nas znajdziesz!
+  </p>
+  <app-map></app-map>
+</div>
+<div #add class="row bg">
+  <div class="col-md-3">
+    <div class="logo-sw">
+      <a href="http://swiecickizdroj.pl/">
+        <img src="../../../../assets/images/logo_zdroj.png" alt="Święcicki zdrój">
+      </a>
+    </div>
+  </div>
+  <div class="col-md-3">
+    <div class="logo-sw">
+      <a href="http://www.centrumgluchow.pl/">
+        <img src="../../../../assets/images/logo-madex.png" alt="Madex Głuchów">
+      </a>
+    </div>
+  </div>
+  <div class="col-md-3">
+    <div class="logo-sw">
+      <a href="http://swiecickizdroj.pl/">
+        <img src="../../../../assets/images/logo_zdroj.png" alt="Święcicki zdrój">
+      </a>
+    </div>
+  </div>
+  <div class="col-md-3">
+    <div class="logo-sw">
+      <a href="http://www.centrumgluchow.pl/">
+        <img src="../../../../assets/images/logo-madex.png" alt="Madex Głuchów">
+      </a>
+    </div>
+  </div>
+</div>
+<app-footer></app-footer>
+
+
+

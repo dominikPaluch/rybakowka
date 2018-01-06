@@ -1,0 +1,136 @@
+<p-growl [value]="msgs"></p-growl>
+<div class="row">
+  <div class="col-md-10 col-md-offset-1">
+    <div class="title-of-table">Zarządzaj użytkownikami</div>
+    <p-dataTable [value]="users" selectionMode="single" [(selection)]="selectedUser"
+                 (onRowSelect)="onRowSelectUser($event)"
+                 [paginator]="true" rows="10" [responsive]="true">
+      <p-column field="login" header="login" [sortable]="true"></p-column>
+      <p-column field="firstname" header="imię" [sortable]="true"></p-column>
+      <p-column field="lastname" header="nazwisko" [sortable]="true"></p-column>
+      <p-column field="email" header="email" [sortable]="true"></p-column>
+      <p-column field="phone" header="telefon" [sortable]="true"></p-column>
+      <p-column field="confirmed" header="potwierdzone" [sortable]="true"></p-column>
+      <p-column field="accessLevelEnum" header="poziom dostępu" [sortable]="true"></p-column>
+      <ng-template pTemplate="emptymessage">
+        TO jest puste!
+      </ng-template>
+      <p-footer>
+        <div class="ui-helper-clearfix" style="width:100%">
+          <button style="float:left" (click)="showDialogToAddUser()" class="btn btn-success">
+            <span class="glyphicon glyphicon-plus add-btn"></span>Dodaj użytkownika</button>
+        </div>
+      </p-footer>
+    </p-dataTable>
+    <form [formGroup]="addUserForm" (ngSubmit)="addUser()" novalidate>
+      <p-dialog header="Dodaj użytkownika" [(visible)]="displayDialogAddUser" [responsive]="true" showEffect="fade"
+                [modal]="true">
+        <div class="ui-grid ui-grid-responsive ui-fluid" *ngIf="user">
+          <div class="ui-grid-row">
+            <div class="ui-grid-col-4"><label for="login">Login</label></div>
+            <div class="ui-grid-col-8"><input placeholder="Login" formControlName="login" pInputText id="login"
+                                              [(ngModel)]="user.login"/>
+            </div>
+          </div>
+          <div class="ui-grid-row">
+            <div class="ui-grid-col-4"><label for="password">Hasło</label></div>
+            <div class="ui-grid-col-8"><input placeholder="Hasło" formControlName="password" pInputText id="password"
+                                              [(ngModel)]="user.password"/></div>
+          </div>
+          <div class="ui-grid-row">
+            <div class="ui-grid-col-4"><label for="firstname">Imię</label></div>
+            <div class="ui-grid-col-8"><input placeholder="Imię" formControlName="firstname" pInputText id="firstname"
+                                              [(ngModel)]="user.firstname"/></div>
+          </div>
+          <div class="ui-grid-row">
+            <div class="ui-grid-col-4"><label for="lastname">Nazwisko</label></div>
+            <div class="ui-grid-col-8"><input placeholder="Nazwisko" formControlName="lastname" pInputText id="lastname"
+                                              [(ngModel)]="user.lastname"/></div>
+          </div>
+          <div class="ui-grid-row">
+            <div class="ui-grid-col-4"><label for="email">Email</label></div>
+            <div class="ui-grid-col-8"><input placeholder="Email" formControlName="email" pInputText id="email"
+                                              [(ngModel)]="user.email"/></div>
+          </div>
+          <div class="ui-grid-row">
+            <div class="ui-grid-col-4"><label for="phone">Telefon</label></div>
+            <div class="ui-grid-col-8"><input placeholder="Telefon" formControlName="phone"
+                                              pInputText id="phone" [(ngModel)]="user.phone"/>
+            </div>
+          </div>
+          <div class="ui-grid-row">
+            <div class="ui-grid-col-4"><label>Poziom dostępu</label>
+            </div>
+            <div class="ui-grid-col-8">
+              <select formControlName="accessLevelEnum" id="accessLevelEnum"
+                      [(ngModel)]="user.accessLevelEnum" (ngModelChange)="onChangeLevel($event)">
+                <option *ngFor="let a of accessLevels" [ngValue]="a.value"> {{a.value}}</option>
+              </select>
+            </div>
+          </div>
+        </div>
+        <p-footer>
+          <div class="ui-dialog-buttonpane ui-helper-clearfix">
+            <button class="btn btn-success">Dodaj</button>
+          </div>
+        </p-footer>
+      </p-dialog>
+    </form>
+    <form [formGroup]="addUserForm" novalidate>
+      <p-dialog header="Edytuj użytkownika" [(visible)]="displayDialogUpdateUser" [responsive]="true" showEffect="fade"
+                [modal]="true">
+        <div class="ui-grid ui-grid-responsive ui-fluid" *ngIf="user">
+          <div class="ui-grid-row">
+            <div class="ui-grid-col-4"><label for="login">Login</label></div>
+            <div class="ui-grid-col-8">
+              <div class="disabled-row">{{user.login}}</div>
+            </div>
+          </div>
+          <div class="ui-grid-row">
+            <div class="ui-grid-col-4"><label for="password">Hasło</label></div>
+            <div class="ui-grid-col-8"><input  placeholder="Hasło" formControlName="password" pInputText id="password2"
+                                               [(ngModel)]="user.password"/></div>
+          </div>
+          <div class="ui-grid-row">
+            <div class="ui-grid-col-4"><label for="firstname">Imię</label></div>
+            <div class="ui-grid-col-8"><input placeholder="Imię" formControlName="firstname" pInputText id="firstname2"
+                                              [(ngModel)]="user.firstname"/></div>
+          </div>
+          <div class="ui-grid-row">
+            <div class="ui-grid-col-4"><label for="lastname">Nazwisko</label></div>
+            <div class="ui-grid-col-8"><input placeholder="Nazwisko" formControlName="lastname"
+                                              pInputText id="lastname2" [(ngModel)]="user.lastname"/></div>
+          </div>
+          <div class="ui-grid-row">
+            <div class="ui-grid-col-4"><label for="email">Email</label></div>
+            <div class="ui-grid-col-8">
+              <div class="disabled-row">{{user.email}}</div>
+            </div>
+          </div>
+          <div class="ui-grid-row">
+            <div class="ui-grid-col-4"><label for="phone">Telefon</label></div>
+            <div class="ui-grid-col-8"><input placeholder="Telefon" formControlName="phone"
+                                              pInputText id="phone2" [(ngModel)]="user.phone"/>
+            </div>
+          </div>
+          <div class="ui-grid-row">
+            <div class="ui-grid-col-4"><label>Poziom dostępu</label>
+            </div>
+            <div class="ui-grid-col-8">
+              <select formControlName="accessLevelEnum"
+                      [(ngModel)]="user.accessLevelEnum" (ngModelChange)="onChangeLevel($event)">
+                <option *ngFor="let a of accessLevels" [ngValue]="a.value"> {{a.value}}</option>
+              </select>
+            </div>
+          </div>
+        </div>
+        <p-footer>
+          <div class="ui-dialog-buttonpane ui-helper-clearfix">
+            <button class="btn btn-success" (click)="updateUser()">Edytuj</button>
+            <button class="btn btn-danger" (click)="removeUser()">Usuń</button>
+          </div>
+        </p-footer>
+      </p-dialog>
+    </form>
+  </div>
+</div>

@@ -1,0 +1,572 @@
+[
+  {
+    "preview_xxs": {
+      "path": "assets/gallery/1.jpg",
+      "width": 500,
+      "height": 375
+    },
+    "preview_xs": {
+      "path": "assets/gallery/1.jpg",
+      "width": 1024,
+      "height": 768
+    },
+    "preview_s": {
+      "path": "assets/gallery/1.jpg",
+      "width": 1440,
+      "height": 1080
+    },
+    "preview_m": {
+      "path": "http://example.com/angular2-image-gallery/might_want_to_have/image001.jpg",
+      "width": 2133,
+      "height": 1600
+    },
+    "preview_l": {
+      "path": "http://example.com/angular2-image-gallery/something_like/image001.jpg",
+      "width": 2880,
+      "height": 2160
+    },
+    "preview_xl": {
+      "path": "http://example.com/xl/image001.jpg",
+      "width": 3840,
+      "height": 2880
+    },
+    "raw": {
+      "path": "http://example.com/raw/image001.jpg",
+      "width": 1400,
+      "height": 1050
+    },
+    "dominantColor": "#a6a6a6"
+  },
+  {
+    "preview_xxs": {
+      "path": "assets/gallery/2.jpg",
+      "width": 500,
+      "height": 375
+    },
+    "preview_xs": {
+      "path": "assets/gallery/2.jpg",
+      "width": 1024,
+      "height": 768
+    },
+    "preview_s": {
+      "path": "assets/gallery/2.jpg",
+      "width": 1440,
+      "height": 1080
+    },
+    "preview_m": {
+      "path": "http://example.com/angular2-image-gallery/might_want_to_have/image001.jpg",
+      "width": 2133,
+      "height": 1600
+    },
+    "preview_l": {
+      "path": "http://example.com/angular2-image-gallery/something_like/image001.jpg",
+      "width": 2880,
+      "height": 2160
+    },
+    "preview_xl": {
+      "path": "http://example.com/xl/image001.jpg",
+      "width": 3840,
+      "height": 2880
+    },
+    "raw": {
+      "path": "http://example.com/raw/image001.jpg",
+      "width": 1400,
+      "height": 1050
+    },
+    "dominantColor": "#a6a6a6"
+  },
+  {
+    "preview_xxs": {
+      "path": "assets/gallery/3.jpg",
+      "width": 500,
+      "height": 375
+    },
+    "preview_xs": {
+      "path": "assets/gallery/3.jpg",
+      "width": 1024,
+      "height": 768
+    },
+    "preview_s": {
+      "path": "assets/gallery/3.jpg",
+      "width": 1440,
+      "height": 1080
+    },
+    "preview_m": {
+      "path": "http://example.com/angular2-image-gallery/might_want_to_have/image001.jpg",
+      "width": 2133,
+      "height": 1600
+    },
+    "preview_l": {
+      "path": "http://example.com/angular2-image-gallery/something_like/image001.jpg",
+      "width": 2880,
+      "height": 2160
+    },
+    "preview_xl": {
+      "path": "http://example.com/xl/image001.jpg",
+      "width": 3840,
+      "height": 2880
+    },
+    "raw": {
+      "path": "http://example.com/raw/image001.jpg",
+      "width": 1400,
+      "height": 1050
+    },
+    "dominantColor": "#a6a6a6"
+  },
+  {
+    "preview_xxs": {
+      "path": "assets/gallery/4.jpg",
+      "width": 500,
+      "height": 375
+    },
+    "preview_xs": {
+      "path": "assets/gallery/4.jpg",
+      "width": 1024,
+      "height": 768
+    },
+    "preview_s": {
+      "path": "assets/gallery/4.jpg",
+      "width": 1440,
+      "height": 1080
+    },
+    "preview_m": {
+      "path": "http://example.com/angular2-image-gallery/might_want_to_have/image001.jpg",
+      "width": 2133,
+      "height": 1600
+    },
+    "preview_l": {
+      "path": "http://example.com/angular2-image-gallery/something_like/image001.jpg",
+      "width": 2880,
+      "height": 2160
+    },
+    "preview_xl": {
+      "path": "http://example.com/xl/image001.jpg",
+      "width": 3840,
+      "height": 2880
+    },
+    "raw": {
+      "path": "http://example.com/raw/image001.jpg",
+      "width": 1400,
+      "height": 1050
+    },
+    "dominantColor": "#a6a6a6"
+  },
+  {
+    "preview_xxs": {
+      "path": "assets/gallery/5.jpg",
+      "width": 500,
+      "height": 375
+    },
+    "preview_xs": {
+      "path": "assets/gallery/5.jpg",
+      "width": 1024,
+      "height": 768
+    },
+    "preview_s": {
+      "path": "assets/gallery/5.jpg",
+      "width": 1440,
+      "height": 1080
+    },
+    "preview_m": {
+      "path": "http://example.com/angular2-image-gallery/might_want_to_have/image001.jpg",
+      "width": 2133,
+      "height": 1600
+    },
+    "preview_l": {
+      "path": "http://example.com/angular2-image-gallery/something_like/image001.jpg",
+      "width": 2880,
+      "height": 2160
+    },
+    "preview_xl": {
+      "path": "http://example.com/xl/image001.jpg",
+      "width": 3840,
+      "height": 2880
+    },
+    "raw": {
+      "path": "http://example.com/raw/image001.jpg",
+      "width": 1400,
+      "height": 1050
+    },
+    "dominantColor": "#a6a6a6"
+  },
+  {
+    "preview_xxs": {
+      "path": "assets/gallery/6.jpg",
+      "width": 500,
+      "height": 375
+    },
+    "preview_xs": {
+      "path": "assets/gallery/6.jpg",
+      "width": 1024,
+      "height": 768
+    },
+    "preview_s": {
+      "path": "assets/gallery/6.jpg",
+      "width": 1440,
+      "height": 1080
+    },
+    "preview_m": {
+      "path": "http://example.com/angular2-image-gallery/might_want_to_have/image001.jpg",
+      "width": 2133,
+      "height": 1600
+    },
+    "preview_l": {
+      "path": "http://example.com/angular2-image-gallery/something_like/image001.jpg",
+      "width": 2880,
+      "height": 2160
+    },
+    "preview_xl": {
+      "path": "http://example.com/xl/image001.jpg",
+      "width": 3840,
+      "height": 2880
+    },
+    "raw": {
+      "path": "http://example.com/raw/image001.jpg",
+      "width": 1400,
+      "height": 1050
+    },
+    "dominantColor": "#a6a6a6"
+  },
+  {
+    "preview_xxs": {
+      "path": "assets/gallery/7.jpg",
+      "width": 500,
+      "height": 375
+    },
+    "preview_xs": {
+      "path": "assets/gallery/7.jpg",
+      "width": 1024,
+      "height": 768
+    },
+    "preview_s": {
+      "path": "assets/gallery/7.jpg",
+      "width": 1440,
+      "height": 1080
+    },
+    "preview_m": {
+      "path": "http://example.com/angular2-image-gallery/might_want_to_have/image001.jpg",
+      "width": 2133,
+      "height": 1600
+    },
+    "preview_l": {
+      "path": "http://example.com/angular2-image-gallery/something_like/image001.jpg",
+      "width": 2880,
+      "height": 2160
+    },
+    "preview_xl": {
+      "path": "http://example.com/xl/image001.jpg",
+      "width": 3840,
+      "height": 2880
+    },
+    "raw": {
+      "path": "http://example.com/raw/image001.jpg",
+      "width": 1400,
+      "height": 1050
+    },
+    "dominantColor": "#a6a6a6"
+  },
+  {
+    "preview_xxs": {
+      "path": "assets/gallery/8.jpg",
+      "width": 500,
+      "height": 375
+    },
+    "preview_xs": {
+      "path": "assets/gallery/8.jpg",
+      "width": 1024,
+      "height": 768
+    },
+    "preview_s": {
+      "path": "assets/gallery/8.jpg",
+      "width": 1440,
+      "height": 1080
+    },
+    "preview_m": {
+      "path": "http://example.com/angular2-image-gallery/might_want_to_have/image001.jpg",
+      "width": 2133,
+      "height": 1600
+    },
+    "preview_l": {
+      "path": "http://example.com/angular2-image-gallery/something_like/image001.jpg",
+      "width": 2880,
+      "height": 2160
+    },
+    "preview_xl": {
+      "path": "http://example.com/xl/image001.jpg",
+      "width": 3840,
+      "height": 2880
+    },
+    "raw": {
+      "path": "http://example.com/raw/image001.jpg",
+      "width": 1400,
+      "height": 1050
+    },
+    "dominantColor": "#a6a6a6"
+  },
+  {
+    "preview_xxs": {
+      "path": "assets/gallery/9.jpg",
+      "width": 500,
+      "height": 375
+    },
+    "preview_xs": {
+      "path": "assets/gallery/9.jpg",
+      "width": 1024,
+      "height": 768
+    },
+    "preview_s": {
+      "path": "assets/gallery/9.jpg",
+      "width": 1440,
+      "height": 1080
+    },
+    "preview_m": {
+      "path": "http://example.com/angular2-image-gallery/might_want_to_have/image001.jpg",
+      "width": 2133,
+      "height": 1600
+    },
+    "preview_l": {
+      "path": "http://example.com/angular2-image-gallery/something_like/image001.jpg",
+      "width": 2880,
+      "height": 2160
+    },
+    "preview_xl": {
+      "path": "http://example.com/xl/image001.jpg",
+      "width": 3840,
+      "height": 2880
+    },
+    "raw": {
+      "path": "http://example.com/raw/image001.jpg",
+      "width": 1400,
+      "height": 1050
+    },
+    "dominantColor": "#a6a6a6"
+  },
+  {
+    "preview_xxs": {
+      "path": "assets/gallery/10.jpg",
+      "width": 500,
+      "height": 375
+    },
+    "preview_xs": {
+      "path": "assets/gallery/10.jpg",
+      "width": 1024,
+      "height": 768
+    },
+    "preview_s": {
+      "path": "assets/gallery/10.jpg",
+      "width": 1440,
+      "height": 1080
+    },
+    "preview_m": {
+      "path": "http://example.com/angular2-image-gallery/might_want_to_have/image001.jpg",
+      "width": 2133,
+      "height": 1600
+    },
+    "preview_l": {
+      "path": "http://example.com/angular2-image-gallery/something_like/image001.jpg",
+      "width": 2880,
+      "height": 2160
+    },
+    "preview_xl": {
+      "path": "http://example.com/xl/image001.jpg",
+      "width": 3840,
+      "height": 2880
+    },
+    "raw": {
+      "path": "http://example.com/raw/image001.jpg",
+      "width": 1400,
+      "height": 1050
+    },
+    "dominantColor": "#a6a6a6"
+  },
+  {
+    "preview_xxs": {
+      "path": "assets/gallery/11.jpg",
+      "width": 500,
+      "height": 375
+    },
+    "preview_xs": {
+      "path": "assets/gallery/11.jpg",
+      "width": 1024,
+      "height": 768
+    },
+    "preview_s": {
+      "path": "assets/gallery/11.jpg",
+      "width": 1440,
+      "height": 1080
+    },
+    "preview_m": {
+      "path": "http://example.com/angular2-image-gallery/might_want_to_have/image001.jpg",
+      "width": 2133,
+      "height": 1600
+    },
+    "preview_l": {
+      "path": "http://example.com/angular2-image-gallery/something_like/image001.jpg",
+      "width": 2880,
+      "height": 2160
+    },
+    "preview_xl": {
+      "path": "http://example.com/xl/image001.jpg",
+      "width": 3840,
+      "height": 2880
+    },
+    "raw": {
+      "path": "http://example.com/raw/image001.jpg",
+      "width": 1400,
+      "height": 1050
+    },
+    "dominantColor": "#a6a6a6"
+  },
+  {
+    "preview_xxs": {
+      "path": "assets/gallery/12.jpg",
+      "width": 500,
+      "height": 375
+    },
+    "preview_xs": {
+      "path": "assets/gallery/12.jpg",
+      "width": 1024,
+      "height": 768
+    },
+    "preview_s": {
+      "path": "assets/gallery/12.jpg",
+      "width": 1440,
+      "height": 1080
+    },
+    "preview_m": {
+      "path": "http://example.com/angular2-image-gallery/might_want_to_have/image001.jpg",
+      "width": 2133,
+      "height": 1600
+    },
+    "preview_l": {
+      "path": "http://example.com/angular2-image-gallery/something_like/image001.jpg",
+      "width": 2880,
+      "height": 2160
+    },
+    "preview_xl": {
+      "path": "http://example.com/xl/image001.jpg",
+      "width": 3840,
+      "height": 2880
+    },
+    "raw": {
+      "path": "http://example.com/raw/image001.jpg",
+      "width": 1400,
+      "height": 1050
+    },
+    "dominantColor": "#a6a6a6"
+  },
+  {
+    "preview_xxs": {
+      "path": "assets/gallery/13.jpg",
+      "width": 500,
+      "height": 375
+    },
+    "preview_xs": {
+      "path": "assets/gallery/13.jpg",
+      "width": 1024,
+      "height": 768
+    },
+    "preview_s": {
+      "path": "assets/gallery/13.jpg",
+      "width": 1440,
+      "height": 1080
+    },
+    "preview_m": {
+      "path": "http://example.com/angular2-image-gallery/might_want_to_have/image001.jpg",
+      "width": 2133,
+      "height": 1600
+    },
+    "preview_l": {
+      "path": "http://example.com/angular2-image-gallery/something_like/image001.jpg",
+      "width": 2880,
+      "height": 2160
+    },
+    "preview_xl": {
+      "path": "http://example.com/xl/image001.jpg",
+      "width": 3840,
+      "height": 2880
+    },
+    "raw": {
+      "path": "http://example.com/raw/image001.jpg",
+      "width": 1400,
+      "height": 1050
+    },
+    "dominantColor": "#a6a6a6"
+  },
+  {
+    "preview_xxs": {
+      "path": "assets/gallery/14.jpg",
+      "width": 500,
+      "height": 375
+    },
+    "preview_xs": {
+      "path": "assets/gallery/14.jpg",
+      "width": 1024,
+      "height": 768
+    },
+    "preview_s": {
+      "path": "assets/gallery/14.jpg",
+      "width": 1440,
+      "height": 1080
+    },
+    "preview_m": {
+      "path": "http://example.com/angular2-image-gallery/might_want_to_have/image001.jpg",
+      "width": 2133,
+      "height": 1600
+    },
+    "preview_l": {
+      "path": "http://example.com/angular2-image-gallery/something_like/image001.jpg",
+      "width": 2880,
+      "height": 2160
+    },
+    "preview_xl": {
+      "path": "http://example.com/xl/image001.jpg",
+      "width": 3840,
+      "height": 2880
+    },
+    "raw": {
+      "path": "http://example.com/raw/image001.jpg",
+      "width": 1400,
+      "height": 1050
+    },
+    "dominantColor": "#a6a6a6"
+  },
+  {
+    "preview_xxs": {
+      "path": "assets/gallery/15.jpg",
+      "width": 500,
+      "height": 375
+    },
+    "preview_xs": {
+      "path": "assets/gallery/15.jpg",
+      "width": 1024,
+      "height": 768
+    },
+    "preview_s": {
+      "path": "assets/gallery/15.jpg",
+      "width": 1440,
+      "height": 1080
+    },
+    "preview_m": {
+      "path": "http://example.com/angular2-image-gallery/might_want_to_have/image001.jpg",
+      "width": 2133,
+      "height": 1600
+    },
+    "preview_l": {
+      "path": "http://example.com/angular2-image-gallery/something_like/image001.jpg",
+      "width": 2880,
+      "height": 2160
+    },
+    "preview_xl": {
+      "path": "http://example.com/xl/image001.jpg",
+      "width": 3840,
+      "height": 2880
+    },
+    "raw": {
+      "path": "http://example.com/raw/image001.jpg",
+      "width": 1400,
+      "height": 1050
+    },
+    "dominantColor": "#a6a6a6"
+  }
+]

@@ -1,0 +1,33 @@
+<p-growl [value]="msgs"></p-growl>
+<div class="ui-widget-header" style="padding:4px 10px;border-bottom: 0 none">
+  <i class="fa fa-search" style="margin:4px 4px 0 0"></i>
+  <input #gb pInputText size="18" placeholder="Szukaj">
+</div>
+<p-dataTable [value]="users" [rows]="5" [paginator]="true" [globalFilter]="gb" #dt>
+  <p-header>Lista użytkowników</p-header>
+  <p-column field="login" [sortable]="true" header="Login"  filterPlaceholder="Szukaj"></p-column>
+  <p-column field="email" [sortable]="true" header="Email"  filterMatchMode="equals">
+    <!--<ng-template pTemplate="filter" let-col>-->
+      <!--<i class="fa fa-close" (click)="yearFilter=null;dt.filter(null,col.field,col.filterMatchMode)"></i>-->
+      <!--<p-slider [style]="{'width':'100%','margin-top':'8px'}" [(ngModel)]="yearFilter" [min]="1970" [max]="2010" (onSlideEnd)="dt.filter($event.value,col.field,col.filterMatchMode)"></p-slider>-->
+    <!--</ng-template>-->
+  </p-column>
+  <p-column field="firstname" [sortable]="true" header="Imię"  >
+    <!--<ng-template pTemplate="filter" let-col>-->
+      <!--<p-dropdown [options]="brands" [style]="{'width':'100%'}" (onChange)="dt.filter($event.value,col.field,col.filterMatchMode)" styleClass="ui-column-filter"></p-dropdown>-->
+    <!--</ng-template>-->
+  </p-column>
+  <p-column field="lastname" [sortable]="true" header="Nazwisko"  filterMatchMode="in">
+    <!--<ng-template pTemplate="filter" let-col>-->
+      <!--<p-multiSelect [options]="colors" defaultLabel="All Colors" (onChange)="dt.filter($event.value,col.field,col.filterMatchMode)" styleClass="ui-column-filter"></p-multiSelect>-->
+    <!--</ng-template>-->
+  </p-column>
+  <p-column styleClass="col-button">
+    <ng-template pTemplate="header">
+      <button type="button" pButton icon="fa-refresh"></button>
+    </ng-template>
+    <ng-template let-user="rowData" pTemplate="body">
+      <button type="button" pButton (click)="selectedAccount(user)" icon="fa-search"></button>
+    </ng-template>
+  </p-column>
+</p-dataTable>

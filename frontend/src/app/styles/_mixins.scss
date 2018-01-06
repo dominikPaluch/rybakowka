@@ -1,0 +1,21 @@
+@mixin color($bg-color, $font-color) {
+  background: $bg-color;
+  color: $font-color;
+  transition: 0.5s ease;
+
+  &:nth-child(even) {
+    background: darken($bg-color, 5%);
+  }
+
+  &:hover {
+    background: darken($bg-color, 10%);
+  }
+
+  &:nth-child(even):hover {
+    background: darken($bg-color, 15%);
+  }
+
+  &.selected {
+    background: darken($bg-color, 25%);
+  }
+}

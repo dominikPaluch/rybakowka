@@ -1,0 +1,36 @@
+<div class="row">
+  <div class="col-md-12">
+    <p-carousel circular="circular" autoplayInterval="4000" easing="easeOutStrong"
+                numVisible="3" [value]="animals">
+      <ng-template let-animal pTemplate="item">
+        <div class="row">
+          <div class="col-md-12 centre-img">
+            <img src="assets/images/{{animal.photo}}.jpg" width="160">
+          </div>
+          <div class="row">
+            <div class="col-md-3 col-md-offset-3">
+              <div class="type-title">
+                Gatunek:
+              </div>
+            </div>
+            <div class="col-md-5">
+              <div class="type">
+                {{animal.type}}
+              </div>
+            </div>
+            <div class="col-md-3 col-md-offset-3">
+              <div class="type-title">
+                Imię:
+              </div>
+            </div>
+            <div class="col-md-5">
+              <div class="type">
+                {{animal.name}}
+              </div>
+            </div>
+          </div>
+        </div>
+      </ng-template>
+    </p-carousel>
+  </div>
+</div>

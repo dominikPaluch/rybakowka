@@ -1,0 +1,72 @@
+<div class="login-bg-img">
+  <div class="row input-login">
+    <div class="back-to-home">
+      <a routerLink="/home">
+        <i class="fa fa-long-arrow-left"></i>
+        <span>Powrót do strony głównej</span>
+      </a>
+    </div>
+    <div class="col-md-12 center-r">
+      <h1>R</h1>
+    </div>
+    <div class="col-md-12">
+      <form [formGroup]="registrationForm" (ngSubmit)="login()">
+        <span class="ui-float-label">
+          <input id="useranme" size="30" pInputText title="Podaj login">
+          <label for="useranme">
+            <i class="fa fa-user float-left"></i>
+            <div class="float-left">Podaj login</div>
+            </label>
+        </span>
+        <span class="ui-float-label">
+          <input id="password" size="30" type="password" autocomplete="new-password"
+                 title="Podaj hasło" pInputText>
+           <label for="password">
+             <i class="fa fa-lock float-left"></i>
+            <div class="float-left">Podaj hasło</div>
+           </label>
+        </span>
+        <span class="ui-float-label">
+          <input id="password-repeat" size="30" type="password" autocomplete="new-password"
+                 title="Powtórz hasło" pInputText>
+           <label for="password-repeat">
+             <i class="fa fa-lock float-left"></i>
+            <div class="float-left">Powtórz hasło</div>
+           </label>
+        </span>
+        <span class="ui-float-label">
+          <input id="firstname" size="30" pInputText title="Podaj imię">
+          <label for="firstname">
+            <i class="fa fa-user float-left"></i>
+            <div class="float-left">Podaj imię</div>
+            </label>
+        </span>
+        <span class="ui-float-label">
+          <input id="lastname" size="30" pInputText title="Podaj nazwisko">
+          <label for="lastname">
+            <i class="fa fa-user float-left"></i>
+            <div class="float-left">Podaj nazwisko</div>
+            </label>
+        </span>
+        <span class="ui-float-label">
+          <input id="email" size="30" pInputText title="Podaj email">
+          <label for="email">
+            <i class="fa fa-envelope float-left"></i>
+            <div class="float-left">Podaj email</div>
+            </label>
+        </span>
+        <span class="ui-float-label">
+          <input id="phone" size="30" pInputText title="Podaj telefon">
+          <label for="phone">
+            <i class="fa fa-phone float-left"></i>
+            <div class="float-left">Podaj telefon</div>
+            </label>
+        </span>
+        <button class="btn btn-success">Zarejestruj</button>
+      </form>
+    </div>
+    <div class="col-md-12 regulations">
+      Rejestrując się akeptujesz <a routerLink="/regulations">regulamin</a>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,84 @@
+<p-growl [value]="msgs"></p-growl>
+<div class="row">
+  <div class="col-md-10 col-md-offset-1">
+    <div class="title-of-table">Zarządzaj sprzętami</div>
+    <p-dataTable [value]="equipments" selectionMode="single" [(selection)]="selectedEquipment"
+                 (onRowSelect)="onRowSelectEquipment($event)"
+                 [paginator]="true" rows="5" [responsive]="true">
+      <p-column field="typeId" header="typ" [sortable]="true">
+        <ng-template let-col="types" let-myobject="rowData" pTemplate type="body">
+          <!--{{equipment.typeId == myobject.typeId ? getNameOfTypeById(equipment.typeId) : 'bez typu'}}-->
+          {{myobject.typeId}}
+        </ng-template>
+      </p-column>
+      <p-column field="statusEquipmentEnum" header="status" [sortable]="true"></p-column>
+      <p-column field="serialNumber" header="numer seryjny" [sortable]="true"></p-column>
+      <ng-template pTemplate="emptymessage">
+        To jest puste!
+      </ng-template>
+      <p-footer>
+        <div class="ui-helper-clearfix" style="width:100%">
+          <button style="float:left" (click)="showDialogToAddEquipment()" class="btn btn-success">
+            <span class="glyphicon glyphicon-plus add-btn"></span>Dodaj sprzęt</button>
+        </div>
+      </p-footer>
+    </p-dataTable>
+    <form [formGroup]="addEquipmentForm" (ngSubmit)="addEquipment()" novalidate>
+      <p-dialog header="Dodaj sprzęt" [(visible)]="displayDialogAddEquipment" [responsive]="true" showEffect="fade"
+                [modal]="true">
+        <div class="ui-grid ui-grid-responsive ui-fluid" *ngIf="equipment">
+          <div class="ui-grid-row">
+            <div class="ui-grid-col-4"><label for="statusEquipmentEnum">Status</label></div>
+            <div class="ui-grid-col-8"><input placeholder="Status" formControlName="statusEquipmentEnum" pInputText id="statusEquipmentEnum"
+                                              [(ngModel)]="equipment.statusEquipmentEnum"/>
+            </div>
+          </div>
+          <div class="ui-grid-row">
+            <div class="ui-grid-col-4"><label for="serialNumber">Nr seryjny</label></div>
+            <div class="ui-grid-col-8"><input placeholder="Numer seryjny" formControlName="serialNumber" pInputText id="serialNumber"
+                                              [(ngModel)]="equipment.serialNumber"/></div>
+          </div>
+          <div class="ui-grid-row">
+            <div class="ui-grid-col-4"><label for="typeId">typ Id</label></div>
+            <div class="ui-grid-col-8"><input placeholder="typ Id" formControlName="typeId" pInputText id="typeId"
+                                              [(ngModel)]="equipment.typeId"/></div>
+          </div>
+        </div>
+        <p-footer>
+          <div class="ui-dialog-buttonpane ui-helper-clearfix">
+            <button class="btn btn-success">Dodaj</button>
+          </div>
+        </p-footer>
+      </p-dialog>
+    </form>
+    <form [formGroup]="addEquipmentForm" novalidate>
+      <p-dialog header="Edytuj sprzęt" [(visible)]="displayDialogUpdateEquipment" [responsive]="true" showEffect="fade"
+                [modal]="true">
+        <div class="ui-grid ui-grid-responsive ui-fluid" *ngIf="equipment">
+          <div class="ui-grid-row">
+            <div class="ui-grid-col-4"><label for="typeId">Typ</label></div>
+            <div class="ui-grid-col-8"><input placeholder="Typ" formControlName="typeId"
+                                              pInputText id="type2" [(ngModel)]="equipment.typeId"/>
+            </div>
+          </div>
+          <div class="ui-grid-row">
+            <div class="ui-grid-col-4"><label for="serialNumber">Nr seryjny</label></div>
+            <div class="ui-grid-col-8"><input  placeholder="Numer seryjny" formControlName="serialNumber" pInputText id="serialNumber2"
+                                               [(ngModel)]="equipment.serialNumber"/></div>
+          </div>
+          <div class="ui-grid-row">
+            <div class="ui-grid-col-4"><label for="statusEquipmentEnum">Cena (n)</label></div>
+            <div class="ui-grid-col-8"><input placeholder="Status" formControlName="statusEquipmentEnum" pInputText id="statusEquipmentEnum2"
+                                              [(ngModel)]="equipment.statusEquipmentEnum"/></div>
+          </div>
+        </div>
+        <p-footer>
+          <div class="ui-dialog-buttonpane ui-helper-clearfix">
+            <button class="btn btn-success" (click)="updateEquipment()">Edytuj</button>
+            <button class="btn btn-danger" (click)="removeEquipment()">Usuń</button>
+          </div>
+        </p-footer>
+      </p-dialog>
+    </form>
+  </div>
+</div>

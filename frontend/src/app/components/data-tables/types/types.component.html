@@ -1,0 +1,90 @@
+<p-growl [value]="msgs"></p-growl>
+<div class="row">
+  <div class="col-md-10 col-md-offset-1">
+    <div class="title-of-table">Zarządzaj typami sprzętów</div>
+    <p-dataTable [value]="types" selectionMode="single" [(selection)]="selectedType"
+                 (onRowSelect)="onRowSelectType($event)"
+                 [paginator]="true" rows="5" [responsive]="true">
+      <p-column field="name" header="nazwa" [sortable]="true"></p-column>
+      <p-column field="description" header="opis" [sortable]="true"></p-column>
+      <p-column field="normalPrice" [style]="{'width':'20%'}" header="cena normalna [zł]" [sortable]="true"></p-column>
+      <p-column field="seasonPrice" [style]="{'width':'20%'}" header="cena sezonowa [zł]" [sortable]="true"></p-column>
+      <ng-template pTemplate="emptymessage">
+        To jest puste!
+      </ng-template>
+      <p-footer>
+        <div class="ui-helper-clearfix" style="width:100%">
+          <button style="float:left" (click)="showDialogToAddType()" class="btn btn-success">
+            <span class="glyphicon glyphicon-plus add-btn"></span>Dodaj Typ sprzętu</button>
+        </div>
+      </p-footer>
+    </p-dataTable>
+    <form [formGroup]="addTypeForm" (ngSubmit)="addType()" novalidate>
+      <p-dialog header="Dodaj typ sprzętu" [(visible)]="displayDialogAddType" [responsive]="true" showEffect="fade"
+                [modal]="true">
+        <div class="ui-grid ui-grid-responsive ui-fluid" *ngIf="type">
+          <div class="ui-grid-row">
+            <div class="ui-grid-col-4"><label for="name">Nazwa</label></div>
+            <div class="ui-grid-col-8"><input placeholder="Nazwa" formControlName="name" pInputText id="name"
+                                              [(ngModel)]="type.name"/>
+            </div>
+          </div>
+          <div class="ui-grid-row">
+            <div class="ui-grid-col-4"><label for="description">Opis</label></div>
+            <div class="ui-grid-col-8"><input placeholder="Opis" formControlName="description" pInputText id="description"
+                                              [(ngModel)]="type.description"/></div>
+          </div>
+          <div class="ui-grid-row">
+            <div class="ui-grid-col-4"><label for="normalPrice">Cena (n)</label></div>
+            <div class="ui-grid-col-8"><input placeholder="Cena normalna" formControlName="normalPrice" pInputText id="normalPrice"
+                                              [(ngModel)]="type.normalPrice"/></div>
+          </div>
+          <div class="ui-grid-row">
+            <div class="ui-grid-col-4"><label for="seasonPrice">Cena (s)</label></div>
+            <div class="ui-grid-col-8"><input placeholder="Cena sezonowa" formControlName="seasonPrice" pInputText id="seasonPrice"
+                                              [(ngModel)]="type.seasonPrice"/></div>
+          </div>
+        </div>
+        <p-footer>
+          <div class="ui-dialog-buttonpane ui-helper-clearfix">
+            <button class="btn btn-success">Dodaj</button>
+          </div>
+        </p-footer>
+      </p-dialog>
+    </form>
+    <form [formGroup]="addTypeForm" novalidate>
+      <p-dialog header="Edytuj typ sprzętu" [(visible)]="displayDialogUpdateType" [responsive]="true" showEffect="fade"
+                [modal]="true">
+        <div class="ui-grid ui-grid-responsive ui-fluid" *ngIf="type">
+          <div class="ui-grid-row">
+            <div class="ui-grid-col-4"><label for="name">Nazwa</label></div>
+            <div class="ui-grid-col-8"><input placeholder="Nazwa" formControlName="name"
+                                              pInputText id="name2" [(ngModel)]="type.name"/>
+            </div>
+          </div>
+          <div class="ui-grid-row">
+            <div class="ui-grid-col-4"><label for="description">Opis</label></div>
+            <div class="ui-grid-col-8"><input  placeholder="Opis" formControlName="description" pInputText id="description2"
+                                               [(ngModel)]="type.description"/></div>
+          </div>
+          <div class="ui-grid-row">
+            <div class="ui-grid-col-4"><label for="normalPrice">Cena (n)</label></div>
+            <div class="ui-grid-col-8"><input placeholder="Cena normalna" formControlName="normalPrice" pInputText id="normalPrice2"
+                                              [(ngModel)]="type.normalPrice"/></div>
+          </div>
+          <div class="ui-grid-row">
+            <div class="ui-grid-col-4"><label for="seasonPrice">Cena (s)</label></div>
+            <div class="ui-grid-col-8"><input placeholder="Cena seznowa" formControlName="seasonPrice"
+                                              pInputText id="seasonPrice2" [(ngModel)]="type.seasonPrice"/></div>
+          </div>
+        </div>
+        <p-footer>
+          <div class="ui-dialog-buttonpane ui-helper-clearfix">
+            <button class="btn btn-success" (click)="updateType()">Edytuj</button>
+            <button class="btn btn-danger" (click)="removeType()">Usuń</button>
+          </div>
+        </p-footer>
+      </p-dialog>
+    </form>
+  </div>
+</div>
